@@ -1,0 +1,207 @@
+import Mock from 'mockjs'
+var Random = Mock.Random
+
+Mock.mock('/api/data', (req, res) => {
+    let data = Mock.mock({
+        "array|7": [
+            {
+                "orderNo|+1": 1,  //序号
+                "account": '@name',//账号
+                'userName': '@cname',  //姓名
+                "status|1": true,   //是否启用
+                "userLevel|1-100": 100, //用户等级
+                "orgName": '@ctitle', //组织结构
+                // "insertUser": "@first", //新增用户
+                // "insertTime": "@datetime",  //新增时间
+                // "updateUser": "@first",//修改用户
+                // "updateTime": Random.now('second') //修改时间    
+
+            }
+        ]
+    })
+    return data
+})
+
+Mock.mock('/api/org', (req, res) => {
+    let data = Mock.mock([
+        {
+            title: 'parent 1',
+            expand: true,
+            children: [
+                {
+                    title: 'parent 1-1',
+                    expand: true,
+                    children: [
+                        {
+                            title: 'leaf 1-1-1',
+                        },
+                        {
+                            title: 'leaf 1-1-2'
+                        }
+                    ]
+                },
+                {
+                    title: 'parent 1-2',
+                    expand: true,
+                    children: [
+                        {
+                            title: 'leaf 1-2-1'
+                        },
+                        {
+                            title: 'leaf 1-2-1'
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            title: 'parent 2',
+            expand: false,
+            children: [
+                {
+                    title: 'parent 1-1',
+                    expand: true,
+                    children: [
+                        {
+                            title: 'leaf 1-1-1'
+                        },
+                        {
+                            title: 'leaf 1-1-2'
+                        }
+                    ]
+                },
+                {
+                    title: 'parent 1-2',
+                    expand: true,
+                    children: [
+                        {
+                            title: 'leaf 1-2-1'
+                        },
+                        {
+                            title: 'leaf 1-2-1'
+                        }
+                    ]
+                }
+            ]
+        }
+    ])
+    return data
+})
+Mock.mock('/api/user',()=>{
+    var data=   [
+        {
+            title: 'parent 1',
+            expand: true,
+            children: [
+                {
+                    id: '1',
+                    title: 'parent 1-1',
+                    checked: false,
+                    children: []
+                   
+                },
+                {
+                    id: '2',
+                    title: 'leaf 1-1-1',
+                    checked: false,
+                    children: []
+                },
+                {
+                    id: '3',
+                    title: 'leaf 1-1-2',
+                    checked: false,
+                    children: []
+                },
+                {
+                    id: '4',
+                    title: 'parent 1-2',
+                    checked: false,
+                    children: []
+                   
+                }, {
+                    id: '5',
+                    title: 'leaf 1-2-1',
+                    checked: true,
+                    children: []
+                },
+                {
+                    id: '6',
+                    title: 'leaf 1-2-1',
+                    expand: true,
+                    children: [
+                        {
+                            id: '6-1',
+                            title: 'leaf 1-2-1',
+                            checked: true,
+                            children: []
+                        },
+                        {
+                            id: '7-1',
+                            title: 'leaf 1-2-1',
+                            checked: false,
+                            children: []
+                        }
+                    ]
+                }
+            ]
+     
+    }
+]
+return  data
+})
+
+Mock.mock('/api/list1', (req, res) => {
+    let data = Mock.mock({
+        "array|7": [
+            {
+                "orderNo|+1": 1,  //序号
+                "orgName": '@ctitle', //组织结构
+                "orgCode":'@name',
+                "status|1": true,   //是否启用
+                "orderNo|1-100":100, 
+            }
+        ]
+    })
+    return data
+})
+Mock.mock('/api/power', (req, res) => {
+    let data = Mock.mock({
+        "array|10": [
+            {   
+                 "roleCode":'@name',
+                 "roleName":'@cname',
+                 "orderNo|1-100":100, 
+                "status|1": true,   //是否启用
+               
+            }
+        ]
+    })
+    return data
+})
+
+Mock.mock('/api/menulist', (req, res) => {
+    let data = Mock.mock({
+        "array|10": [
+            {   
+                "menuName":'@cname',
+                "menuCode":'@name',
+                "url":'@url',
+                "icon":'icon',
+                "orderNo|1-100":100, 
+                "status|1": true,   //是否启用
+               
+            }
+        ]
+    })
+    return data
+})
+// export default data
+Mock.mock('/api/menuListByRoleId',()=>{
+    var data=   [/*{
+                    id: 'c92ee426f33745feb30fadc1f272da30'
+                },*/
+                {
+                    id: '082ca6c4df3c4111860e432c42c95ee3',
+                }]
+return  data
+})

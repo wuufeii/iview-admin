@@ -1,0 +1,26 @@
+.ivu-btn:focus {
+    box-shadow: none !important;
+}
+.org_search .ivu-input-icon-clear {
+    right: 25px !important;
+}
+.org_search>.ivu-form-item-content {
+	height: 32px;
+}
+.query-btn .ivu-upload {
+	display: inline-block;
+}
+.query-btn .ivu-upload .ivu-upload-list {
+    margin-top: 0;
+}
+.slide_drop .ivu-dropdown-menu {
+	text-align: left;
+}
+.spin-icon-load{
+        animation: ani-demo-spin 1s linear infinite;
+    }
+    @keyframes ani-demo-spin {
+        from { transform: rotate(0deg);}
+        50%  { transform: rotate(180deg);}
+        to   { transform: rotate(360deg);}
+    }

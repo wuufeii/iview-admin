@@ -1,0 +1,109 @@
+import Vue from 'vue'
+import Router from 'vue-router'
+import Main from '@/components/main/main'
+import Login from '@/components/view/login'
+
+
+Vue.use(Router)
+
+const routes= [
+ 
+  {
+    path: '/',
+    name: 'Login',
+    component: Login
+  },
+  // { 
+  //   path:'/cs',
+  //   conputed:() => import('@/components/view/404') 
+  // },
+  {
+    path:'*',
+    component:() => import('@/components/view/404') 
+  },
+  {
+    path: '/home',
+    name: 'Home',
+    component: Main,
+   
+  },
+  {
+    path: '/core',
+    name: 'Dore',
+    component: Main,
+    meta: {
+      icon: 'logo-buffer',
+      title: '核心数据库'
+    },
+    children:[
+      {
+        path:'/core/app_account',
+        meta: {
+         icon: 'md-trending-up',
+         title: 'APP账号管理'
+       },
+        component:() => import('@/components/view/core/appAccount/appAccount')
+      },
+      {
+        path:'/core/app_user',
+        meta: {
+         icon: 'md-trending-up',
+         title: 'APP用户管理'
+       },
+        component:() => import('@/components/view/core/appUser/appUser')
+      },
+      {
+        path:'/core/vehicle_static',
+        meta: {
+         icon: 'md-trending-up',
+         title: '车辆静态数据'
+       },
+        component:() => import('@/components/view/core/vehicleStatic/vehicleStatic')
+      },
+      {
+        path:'/core/vehicle_sales',
+        meta: {
+         icon: 'md-trending-up',
+         title: '车辆销售数据'
+       },
+        component:() => import('@/components/view/core/vehicleSales/vehicleSales')
+      },
+      {
+        path:'/core/vehicle_trim',
+        meta: {
+         icon: 'md-trending-up',
+         title: '车辆内饰阶段'
+       },
+        component:() => import('@/components/view/core/vehicleTrim/vehicleTrim')
+      },
+      {
+        path:'/core/info_UCU',
+        meta: {
+         icon: 'md-trending-up',
+         title: 'UCU信息管理'
+       },
+        component:() => import('@/components/view/core/infoUCU/infoUCU')
+      }
+    ]
+  }
+ 
+]
+
+const router = new Router({
+  mode:"hash",
+  routes: routes
+})
+
+// import iView from 'iview';
+// Vue.use(iView);
+
+// router.beforeEach((to, from, next) => {
+//     iView.LoadingBar.start();
+//     next();
+// });
+
+// router.afterEach(route => {
+//     iView.LoadingBar.finish();
+// });
+
+export default router
