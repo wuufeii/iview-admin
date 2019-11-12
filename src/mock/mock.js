@@ -4,14 +4,14 @@ var Random = Mock.Random
 Mock.mock('/api/login', (req, res) => {
     let data = Mock.mock({
         userName: 'admin',
-        password: '123456'
+        password: 'admin'
     })
     return data
 })
 
 Mock.mock('/api/data', (req, res) => {
     let data = Mock.mock({
-        "array|40000": [
+        "array|4000": [
             {
                 "orderNo|+1": 1,  //序号
                 "account": '@name',//账号
@@ -203,14 +203,4 @@ Mock.mock('/api/menulist', (req, res) => {
         ]
     })
     return data
-})
-// export default data
-Mock.mock('/api/menuListByRoleId',()=>{
-    var data=   [/*{
-                    id: 'c92ee426f33745feb30fadc1f272da30'
-                },*/
-                {
-                    id: '082ca6c4df3c4111860e432c42c95ee3',
-                }]
-return  data
 })

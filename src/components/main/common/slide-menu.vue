@@ -75,7 +75,7 @@
 							icon: "md-trending-up",
 							to: "/third/third_1",
 							title: "三级菜单-1",
-							name: "second_1"
+							name: "third_1"
 					},
 					{
 							icon: "md-trending-up",

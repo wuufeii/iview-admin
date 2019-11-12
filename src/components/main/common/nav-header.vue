@@ -14,156 +14,163 @@
     <!-- 面包屑导航 -->
     <Breadcrumb>
       <BreadcrumbItem to="/home">
-        <Icon type="ios-home-outline"></Icon>首页
+        <Icon type="ios-home-outline"></Icon>
+        首页
       </BreadcrumbItem>
-      <BreadcrumbItem v-for="item in matched"    :key="item.meta.icon">
+      <BreadcrumbItem v-for="item in matched" :key="item.meta.icon">
         <Icon :type="item.meta.icon"></Icon>
         {{item.meta.title}}
       </BreadcrumbItem>
     </Breadcrumb>
     <!-- 右侧 -->
     <div class="header_right">
-     
-      <Dropdown class="header_user" >
+      <span @click="changeColor" style="color: #fff;cursor: pointer">换肤</span>
+      <!-- 全屏组件 -->
+      <fullScreen v-model="isFullscreen"></fullScreen>
+      <Dropdown class="header_user">
         <a href="javascript:void(0)">
-            <Avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg"/>
-             <span>{{userInforList.userName}}</span>
-            <Icon type="ios-arrow-down"></Icon>
+          <Avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg"/>
+          <span>管理员</span>
+          <Icon type="ios-arrow-down"></Icon>
         </a>
         <DropdownMenu slot="list">
-            <DropdownItem @click.native="isInfoModel=true">个人信息</DropdownItem>
-            <DropdownItem @click.native="isUpdatePassModel=true">修改密码</DropdownItem>
-            <DropdownItem @click.native="cancelModal=true">注销</DropdownItem>
+          <DropdownItem @click.native="isInfoModel=true">个人信息</DropdownItem>
+          <DropdownItem @click.native="isUpdatePassModel=true">修改密码</DropdownItem>
+          <DropdownItem @click.native="cancelModal=true">注销</DropdownItem>
         </DropdownMenu>
-       </Dropdown>
-        <!-- 全屏组件 -->
-      <fullScreen v-model="isFullscreen"></fullScreen>
+      </Dropdown>
       <!-- 个人信息弹窗 -->
-       <Modal v-model="isInfoModel" footer-hide class="write-model" :mask-closable="false"  title="个人信息">
-          <div class="info_table model_box">
-            <table cellspacing="0" cellpadding="0" border="0" >
-               <thead>
-                   <tr>
-                     <th width="100">姓名</th>
-                     <th>{{userInforList.userName}}</th>
-                   </tr>
-               </thead>
-               <tbody>
-                   <tr>
-                     <td>用户名</td>
-                     <td>{{userInforList.account}}</td>
-                   </tr>
-                   <tr>
-                     <td>姓名</td>
-                     <td>{{userInforList.userName}}</td>
-                   </tr>
-                   <tr>
-                     <td>用户名</td>
-                     <td>{{userInforList.account}}</td>
-                   </tr>
-                   <tr>
-                     <td>姓名</td>
-                     <td>{{userInforList.userName}}</td>
-                   </tr>
-                   <tr>
-                     <td>用户名</td>
-                     <td>{{userInforList.account}}</td>
-                   </tr>
-                   <tr>
-                     <td>姓名</td>
-                     <td>{{userInforList.userName}}</td>
-                   </tr>
-                   <tr>
-                     <td>用户名</td>
-                     <td>{{userInforList.account}}</td>
-                   </tr>
-               </tbody>
-            </table>
-          </div>
-       <div class="form-btn">
-         <Button type="primary" @click="isInfoModel=false">关闭</Button>
-       </div>
-      </Modal> 
+      <Modal v-model="isInfoModel" footer-hide class="write-model" :mask-closable="false" title="个人信息">
+        <div class="info_table model_box">
+          <table cellspacing="0" cellpadding="0" border="0">
+            <thead>
+            <tr>
+              <th width="100">姓名</th>
+              <th>{{userInforList.userName}}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>用户名</td>
+              <td>{{userInforList.account}}</td>
+            </tr>
+            <tr>
+              <td>姓名</td>
+              <td>{{userInforList.userName}}</td>
+            </tr>
+            <tr>
+              <td>用户名</td>
+              <td>{{userInforList.account}}</td>
+            </tr>
+            <tr>
+              <td>姓名</td>
+              <td>{{userInforList.userName}}</td>
+            </tr>
+            <tr>
+              <td>用户名</td>
+              <td>{{userInforList.account}}</td>
+            </tr>
+            <tr>
+              <td>姓名</td>
+              <td>{{userInforList.userName}}</td>
+            </tr>
+            <tr>
+              <td>用户名</td>
+              <td>{{userInforList.account}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="form-btn">
+          <Button type="primary" @click="isInfoModel=false">关闭</Button>
+        </div>
+      </Modal>
       <!-- 修改密码弹窗 -->
-       <Modal v-model="isUpdatePassModel" :mask-closable="false"  footer-hide  class="write-model" title="个人信息">
-    
-         <update-pass :password="userInforList.password" @close="isUpdatePassModel=false">
-             
-         </update-pass>
-   
+      <Modal v-model="isUpdatePassModel" :mask-closable="false" footer-hide class="write-model" title="个人信息">
 
-      </Modal> 
+        <update-pass :password="userInforList.password" @close="isUpdatePassModel=false">
+
+        </update-pass>
+
+
+      </Modal>
 
       <!-- 注销弹窗 -->
-       <Modal v-model="cancelModal" :mask-closable="false"  @on-ok="cancelUser" title="注销管理员弹窗">
-      <h1 class="modal_txt1">
-        确认<span>注销</span>{{userInforList.userName}}用户？？？
-      </h1>
-    </Modal>
+      <Modal v-model="cancelModal" :mask-closable="false" @on-ok="cancelUser" title="注销管理员弹窗">
+        <h1 class="modal_txt1">
+          确认<span>注销</span>{{userInforList.userName}}用户？？？
+        </h1>
+      </Modal>
     </div>
     <p class="clear"></p>
   </div>
 </template>
 <script>
-import {serverAjaxReq} from '@/util/axios.js'
-import fullScreen from "./fullscreen";
-import updatePass from './children/updatePass'
-// import axios from 'axios';
-export default {
-  data() {
-    return {
-      cancelModal:false,
-      isUpdatePassModel:false,
-      isFullscreen: false,
-      add: false,
-      isInfoModel:false,
-      matched: [],
-      userInforList:{},   
-    };
-  },
-  components: {
-    fullScreen,updatePass
-  },
-  methods: {
+  import {serverAjaxReq} from '@/util/axios.js'
+  import fullScreen from "./fullscreen";
+  import updatePass from './children/updatePass'
+  // import axios from 'axios';
+  export default {
+    data() {
+      return {
+        theme: 'themeA',
+        cancelModal: false,
+        isUpdatePassModel: false,
+        isFullscreen: false,
+        add: false,
+        isInfoModel: false,
+        matched: [],
+        userInforList: {},
+      };
+    },
+    components: {
+      fullScreen, updatePass
+    },
+    methods: {
       //获取管理员信息列表
-    getUsersData(states){
-        
-    },
-    // 注销确认事件
-    cancelUser(){
-        this.$router.push('/');
-        this.$store.commit('tagCloseWhole','all')
-        sessionStorage.clear()
-    },
-    collapsedSider() {
-      this.$emit("collapsedSider");
-      this.add = !this.add;
-    },
-    close(){
+      getUsersData(states) {
 
+      },
+      // 注销确认事件
+      cancelUser() {
+        this.$router.push('/');
+        this.$store.commit('tagCloseWhole', 'all')
+        sessionStorage.clear()
+      },
+      collapsedSider() {
+        this.$emit("collapsedSider");
+        this.add = !this.add;
+      },
+      close() {
+
+      },
+
+      changeColor() {
+        this.theme = this.theme === 'themeA' ? 'themeB' : this.theme === 'themeB' ? 'themeC' : 'themeA'
+        $('body').removeClass().addClass(this.theme)
+      }
     },
-    
-  },
-  watch: {
-    $route(to, from) {
+    watch: {
+      $route(to, from) {
+        this.matched = this.$route.matched;
+      }
+    },
+    mounted() {
       this.matched = this.$route.matched;
+      this.getUsersData();
     }
-  },
-  mounted() {
-     this.matched = this.$route.matched;
-     this.getUsersData();
-  }
-};
+  };
 </script>
 
 
 <style scoped>
-.rotateIcon {
-  transform: rotate(0);
-  transition: all 0.2s ease;
-}
-.rotateIcon.add {
-  transform: rotate(-90deg);
-  transition: all 0.2s ease;
-}
+  .rotateIcon {
+    transform: rotate(0);
+    transition: all 0.2s ease;
+  }
+
+  .rotateIcon.add {
+    transform: rotate(-90deg);
+    transition: all 0.2s ease;
+  }
 </style>

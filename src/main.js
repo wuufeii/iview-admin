@@ -4,21 +4,18 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import iview from 'iview'
-import $ from 'jquery'
 import 'iview/dist/styles/iview.css'
 import store from './vuex'
-import {
-		forTreeData
-	} from '@/util/util.js'
 Vue.use(iview)
 
-import '@/assets/css/index.css'
-import '@/assets/css/common.css'
 // 引入mockjs
 import Mock from '@/mock/mock'
 //引入时间格式插件
 import dataTime from '@/util/util'
 Vue.config.productionTip = false
+
+import VueParticles from 'vue-particles'
+Vue.use(VueParticles)
 
 /*router.beforeEach((to, from, next) => {
 	if(to.path!='/'&&to.path!='/home'){

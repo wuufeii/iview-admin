@@ -27,7 +27,6 @@ body {
 }
 .main .content-wrapper {
   padding: 5px;
-  /* height:calc(100%- 84px); */
   overflow: auto;
   -webkit-box-flex: 1;
   -ms-flex: auto;
@@ -91,7 +90,6 @@ body {
   display: inline-block;
   height: 44px;
   padding-left: 32px;
-/*  background: url(../../../static/img/logo.jpg) no-repeat left;*/
   background-size: auto 38px;
   font-size: 16px;
   color: white;
@@ -329,13 +327,6 @@ body {
 .insert_form .ipt01 {
   width: 126px;
 }
-.ivu-btn-primary {
-  background: #0081BA;
-  border-color: #0081BA;
-}
-.ivu-btn-primary:hover {
-  background: #25A4F4;
-}
 .ivu-card-body {
   padding: 2px;
 }
@@ -526,196 +517,3 @@ body {
 .modal_txt1 span {
   color: #FF2E00;
 }
-/*userTable*/
-.ivu-input-number-default {
-  height: auto;
-}
-/*角色分配*/
-.choose_s {
-  width: 200px;
-  height: auto;
-}
-.choose_s .ivu-select-dropdown-list li {
-  text-align: left;
-}
-.choose_t {
-  margin-top: 10px;
-  height: 366px;
-}
-.choose_t td,
-.choose_t th {
-  text-align: center;
-}
-/*login*/
-.login {
-  width: 320px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 60px;
-}
-.login > p {
-  text-align: left;
-  width: 300px;
-}
-.login .ivu-input-icon {
-  right: -5px;
-}
-.login .ivu-form-item-error-tip {
-  right: 32px;
-}
-.treeModel .ivu-card-body {
-  padding: 0 16px;
-}
-.power_list {
-  height: 100%;
-}
-.user_list {
-  height: 100%;
-}
-.user_list .tableCard + div {
-  display: none;
-}
-/*org  user*/
-.org_list .table-btn button:first-child,
-.user_list .table-btn button:first-child {
-  letter-spacing: 8px;
-  text-indent: 8px;
-}
-/*menu*/
-.menu_list,
-.org_list {
-  height: 100%;
-}
-.menu_list .ivu-row,
-.org_list .ivu-row {
-  height: 100%;
-}
-.menu_list .ivu-row .ivu-col,
-.org_list .ivu-row .ivu-col {
-  height: 100%;
-}
-.menu_list .ivu-row .ivu-col-span-4 .tableCard,
-.org_list .ivu-row .ivu-col-span-4 .tableCard {
-  margin-top: 5px;
-  height: 100%;
-  overflow: auto;
-}
-.menu_list .ivu-row .ivu-col-span-4 .tableCard .ivu-card-body,
-.org_list .ivu-row .ivu-col-span-4 .tableCard .ivu-card-body {
-  height: 100%;
-}
-.menu_list .ivu-row .ivu-col-span-20 .tableCard,
-.org_list .ivu-row .ivu-col-span-20 .tableCard {
-  margin-top: 5px;
-}
-.menu_list .ivu-row .ivu-col-span-20 .ivu-card-body .ivu-table-wrapper,
-.org_list .ivu-row .ivu-col-span-20 .ivu-card-body .ivu-table-wrapper {
-  height: 100%;
-}
-.menu_list .ivu-table-row td:nth-child(5),
-.org_list .ivu-table-row td:nth-child(5) {
-  padding: 0 5px;
-}
-/*分配角色 用户指定 菜单挂接*/
-.set-authority .tableCard .ivu-card-body {
-  height: 432px;
-  overflow: auto;
-}
-/*字典值管理类别查询*/
-.search_tree {
-  margin-bottom: 3px;
-}
-.search_tree .search_home {
-  color: #2d8cf0;
-  font-weight: bold;
-  padding: 5px 10px;
-  border-right: 1px solid #dcdee2;
-}
-.search_tree .search_home > i {
-  font-size: 20px;
-  line-height: 1;
-}
-.search_tree .search_btn:focus {
-  box-shadow: none;
-}
-.search_tree .search_query {
-  padding-right: 9px;
-}
-.search_tree .search_query > span {
-  padding-left: 9px;
-}
-/*个人信息table*/
-.info_table table {
-  width: 100%;
-  margin: 0 auto;
-  border-collapse: collapse;
-}
-.info_table table th,
-.info_table table td {
-  border: 1px solid #e8eaec;
-  padding: 5px 10px;
-  height: 20px;
-  line-height: 20px;
-}
-.info_table table thead {
-  background: #F8F8F9;
-}
-.info_table table thead th {
-  font-size: 14px;
-  color: #515A84;
-}
-.info_table table tbody tr:hover {
-  background: #EBF7FF;
-}
-.model_switch {
-  display: block;
-  width: 100%;
-  min-height: 44px;
-}
-.model_switch .ivu-form-item {
-  display: block;
-  width: 50% !important;
-  float: left;
-}
-.ivu-input-number-handler-wrap a:nth-child(1) span {
-  padding-top: 1px;
-}
-.ivu-input-number-handler-wrap a:nth-child(2) span {
-  padding-top: 2.5px;
-}
-
-.org_list .ivu-row .ivu-col-span-5 .tableCard {
-  margin-top: 5px;
-  height: 100%;
-  overflow: auto;
-}
-.org_list .ivu-row .ivu-col-span-19 .tableCard {
-  margin-top: 5px;
-}
-
-.ivu-btn:focus {
-    box-shadow: none !important;
-}
-.org_search .ivu-input-icon-clear {
-    right: 25px !important;
-}
-.org_search>.ivu-form-item-content {
-	height: 32px;
-}
-.query-btn .ivu-upload {
-	display: inline-block;
-}
-.query-btn .ivu-upload .ivu-upload-list {
-    margin-top: 0;
-}
-.slide_drop .ivu-dropdown-menu {
-	text-align: left;
-}
-.spin-icon-load{
-        animation: ani-demo-spin 1s linear infinite;
-    }
-    @keyframes ani-demo-spin {
-        from { transform: rotate(0deg);}
-        50%  { transform: rotate(180deg);}
-        to   { transform: rotate(360deg);}
-    }

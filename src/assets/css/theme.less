@@ -1,0 +1,76 @@
+.demoTheme(@pic1: #454545,@pic2: #6b6767,@pic3:#11090973,@topBg:#454545,@leftBg:#454545) {
+  .ivu-layout {
+    background: white;
+  }
+  .ivu-layout-sider {
+    background: url(@topBg) left top @pic1 no-repeat;
+  }
+  .ivu-layout-header {
+    background: url(@leftBg) left top @pic1;
+  }
+  .ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu) {
+    background: #fffdfd4a;
+  }
+  .tags-nav .btn-con, .tags-nav .close-con {
+    background: @pic1+55;
+  }
+  .ivu-tag-primary.ivu-tag-dot .ivu-tag-dot-inner {
+    background: @pic2;
+  }
+  .header_right .header_user .ivu-select-dropdown {
+    background: @pic2;
+
+    .ivu-dropdown-menu li:hover {
+      background: @pic2;
+    }
+  }
+
+  .ivu-card-head {
+    background: @pic2;
+  }
+
+  .ivu-modal-header {
+    background: @pic2;
+  }
+
+  .ivu-modal-footer .ivu-btn-text {
+    background: @pic2;
+    border-color: @pic2;
+  }
+
+  .ivu-modal-footer .ivu-btn-text:hover {
+    background: @pic2;
+  }
+
+  .modal_txt1 {
+    color: @pic2;
+  }
+  .search_tree .search_home {
+    color: @pic2;
+  }
+
+  .verification-bg-btn {
+    color: @pic2;
+  }
+
+  .skyDrive_list .ivu-row .ivu-col-span-20 .tableCard {
+    .title {
+      background: @pic2;
+    }
+
+    .operation aside span:hover {
+      color: @pic2;
+    }
+  }
+  .ivu-timeline-item {
+  }
+  .ivu-tabs-nav .ivu-tabs-tab-active {
+    color: @pic2;
+  }
+  .ivu-tabs-ink-bar {
+    background: @pic2;
+  }
+  .ivu-menu .ivu-menu-item {
+    color: white;
+  }
+}

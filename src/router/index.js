@@ -13,10 +13,6 @@ const routes= [
     name: 'Login',
     component: Login
   },
-  // { 
-  //   path:'/cs',
-  //   conputed:() => import('@/components/view/404') 
-  // },
   {
     path:'*',
     component:() => import('@/components/view/404') 
@@ -124,17 +120,4 @@ const router = new Router({
   mode:"hash",
   routes: routes
 })
-
-// import iView from 'iview';
-// Vue.use(iView);
-
-// router.beforeEach((to, from, next) => {
-//     iView.LoadingBar.start();
-//     next();
-// });
-
-// router.afterEach(route => {
-//     iView.LoadingBar.finish();
-// });
-
 export default router
