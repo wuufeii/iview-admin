@@ -65,7 +65,6 @@
               userName: this.formItem.userName,
               password: this.formItem.password
             }).then(res => {
-              console.log(res)
               this.isLoad = false;
               this.$Message.success("登录成功");
               sessionStorage.setItem("push", "");
