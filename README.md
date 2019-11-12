@@ -14,13 +14,13 @@
 
      登录页效果
 <div align="center">
-  <img src="https://github.com/wuufeii/html-css/blob/master/assets/img-finance/1.jpg"/>
+  <img src="https://github.com/wuufeii/html-css/blob/master/assets/img-admin/1.jpg"/>
 </div>
 
      表格页效果
 
 <div align=center>
-  <img src="https://github.com/wuufeii/html-css/blob/master/assets/img-finance/2.jpg"/>
+  <img src="https://github.com/wuufeii/html-css/blob/master/assets/img-admin/2.jpg"/>
 </div>
 
 
