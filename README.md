@@ -1,21 +1,40 @@
-# baowei-zhyw-web
-
-> A Vue.js project
-
-## Build Setup
-
+# iview-admin
 ``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
+本项目依赖vue2+ / vue-louter / vuex / axios / webpack / less /
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+>       这是一个使用iview完成的后端管理
+
+## 项目的效果图
+
+想要看看项目的效果是怎样的？来吧——[传送门](https://wuufeii.github.io/admin/index.html) <br />
+
+## 项目截图
+
+     登录页效果
+<div align="center">
+  <img src="https://github.com/wuufeii/html-css/blob/master/assets/img-finance/1.jpg"/>
+</div>
+
+     表格页效果
+
+<div align=center>
+  <img src="https://github.com/wuufeii/html-css/blob/master/assets/img-finance/2.jpg"/>
+</div>
+
+
+## 项目如何使用
+
+``` bash
+### 首先下载项目依赖包，使用方命令。
+npm install
+
+### 服务器热部署，运行项目
+npm run dev
+
+### 项目的构建命令
+npm run build
+
+### 以下命令来查看依赖关系.然后再根据具体情况划分代码块.
+npm run build --report
